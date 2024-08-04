@@ -19,7 +19,7 @@ jobs:
        Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/AppName.zip"
        New-Item -Path "$(pwd)\AppName" -ItemType Directory -Force
        $currentPath = (Get-Location).ProviderPath
-       unzip $currentPath/AppName.zip -d "$(pwd)\AppName"
+       unzip $currentPath/AppName.zip -d "$(pwd)/AppName"
    
           cd "$currentPath/AppName"
     - name: Publish App
