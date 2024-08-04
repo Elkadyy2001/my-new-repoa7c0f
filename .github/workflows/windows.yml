@@ -16,13 +16,14 @@ jobs:
         dotnet-version: 8.0.x
     - name: Setup Project
       run: |
-       echo $(Get-Location)
-      
-       Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/SampleApp.zip"
-
-       $currentPath = (Get-Location)
-       unzip $currentPath/SampleApp.zip
-       # cd "$currentPath/AppName"
+       Invoke-WebRequest -Uri "https://bit.ly/4b53xon" -OutFile "$(Get-Location)/AppName.zip"
+    - name: Extract
+      run: |
+     
+       $currentPath = (Get-Location).ProviderPath
+       unzip $currentPath/AppName.zip -d $(pwd)
+   
+          cd "$currentPath/AppName"
     - name: Publish App
       run: |
             $currentPath = (Get-Location).ProviderPath
@@ -43,5 +44,7 @@ jobs:
           ${{ env.exe-path }}
 
           
+
+        
 
         
