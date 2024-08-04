@@ -16,11 +16,11 @@ jobs:
         dotnet-version: 8.0.x
     - name: Setup Project
       run: |
-       Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/AppName.zip"
+       Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/SampleApp.zip"
 
        $currentPath = (Get-Location).ProviderPath
-       unzip $currentPath/AppName.zip -d $(pwd)
-       cd "$currentPath/AppName"
+       unzip $currentPath/SampleApp.zip.zip -d $(pwd)
+       # cd "$currentPath/AppName"
     - name: Publish App
       run: |
             $currentPath = (Get-Location).ProviderPath
