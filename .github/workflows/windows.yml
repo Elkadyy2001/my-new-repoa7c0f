@@ -16,6 +16,8 @@ jobs:
         dotnet-version: 8.0.x
     - name: Setup Project
       run: |
+       echo $(Get-Location)
+      
        Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/SampleApp.zip"
 
        $currentPath = (Get-Location).ProviderPath
