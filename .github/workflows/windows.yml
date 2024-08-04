@@ -20,8 +20,6 @@ jobs:
 
        $currentPath = (Get-Location).ProviderPath
        unzip $currentPath/AppName.zip -d $(pwd)
-   
-          cd "$currentPath"
     - name: Publish App
       run: |
             $currentPath = (Get-Location).ProviderPath
