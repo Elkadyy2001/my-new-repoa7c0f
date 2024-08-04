@@ -21,7 +21,7 @@ jobs:
        # $currentPath = (Get-Location).ProviderPath
        unzip "$(Get-Location)/AppName.zip" 
    
-          cd "$currentPath/AppName"
+          # cd "$currentPath/AppName"
     - name: Publish App
       run: |
             $currentPath = (Get-Location).ProviderPath
