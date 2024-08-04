@@ -17,9 +17,9 @@ jobs:
     - name: Setup Project
       run: |
        Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/AppName.zip"
-       New-Item -Path "$(pwd)\AppName" -ItemType Directory -Force
-       $currentPath = (Get-Location).ProviderPath
-       unzip "$(Get-Location)/AppName.zip" -d "$(pwd)/AppName"
+       # New-Item -Path "$(pwd)\AppName" -ItemType Directory -Force
+       # $currentPath = (Get-Location).ProviderPath
+       unzip "$(Get-Location)/AppName.zip" 
    
           cd "$currentPath/AppName"
     - name: Publish App
