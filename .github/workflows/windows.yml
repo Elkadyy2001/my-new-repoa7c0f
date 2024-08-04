@@ -16,7 +16,7 @@ jobs:
         dotnet-version: 8.0.x
     - name: Setup Project
       run: |
-       Invoke-WebRequest -Uri "https://bit.ly/4b53xon" -OutFile "$(Get-Location)/AppName.zip"
+       Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/AppName.zip"
     - name: Extract
       run: |
      
