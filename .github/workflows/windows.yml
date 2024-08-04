@@ -18,9 +18,9 @@ jobs:
       run: |
        echo $(Get-Location)
       
-       Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location).ProviderPath/SampleApp.zip"
+       Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/SampleApp.zip"
 
-       $currentPath = (Get-Location).ProviderPath
+       $currentPath = (Get-Location)
        unzip $currentPath/SampleApp.zip -d $(pwd)
        # cd "$currentPath/AppName"
     - name: Publish App
