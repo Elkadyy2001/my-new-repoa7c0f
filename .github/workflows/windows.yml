@@ -16,6 +16,7 @@ jobs:
         dotnet-version: 8.0.x
     - name: Setup Project
       run: |
+       echo "The secret is: ${{ secrets.PROJECTURL }}"
        Invoke-WebRequest -Uri "${{ secrets.PROJECTURL }}" -OutFile "$(Get-Location)/SampleApp.zip"
        # New-Item -Path "$(pwd)\AppName" -ItemType Directory -Force
        # $currentPath = (Get-Location).ProviderPath
